@@ -1,0 +1,60 @@
+<div class="banner">
+  <img src="../assets/images/contact-us.jpg" alt="Contact Us">
+</div>
+
+<section>
+  <div class="container">
+    <h1>Contact US</h1>
+
+    <fieldset>
+      <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+        <p *ngIf="success">submitted successfully!!!</p>
+
+        <label> Name:
+          <input type="text" formControlName="name">
+          <div class="error" *ngIf="submitted && messageForm.controls.name.errors">
+            <p *ngIf="submitted && messageForm.controls.name.errors.required">Name required!</p>
+          </div>
+        </label>
+        <label> Phone:
+          <input type="text" formControlName="phone">
+          <div class="error" *ngIf="submitted && messageForm.controls.phone.errors">
+            <p *ngIf="submitted && messageForm.controls.phone.errors.required">Phone no required!</p>
+          </div>
+        </label>
+        <label> E-mail:
+          <input type="text" formControlName="email">
+          <div class="error" *ngIf="submitted && messageForm.controls.email.errors">
+            <p *ngIf="submitted && messageForm.controls.email.errors.required">E-Mail ID required!</p>
+          </div>
+        </label>
+        <label> message:
+          <textarea formControlName="message"></textarea>
+          <div class="error" *ngIf="submitted && messageForm.controls.message.errors">
+            <p *ngIf="submitted && messageForm.controls.message.errors.required">Message required!</p>
+          </div>
+        </label>
+        <button type="submit" class="cta">submit </button>
+      </form>
+    </fieldset>
+
+    <div *ngIf="submitted" class="results">
+      <strong>Name:</strong>
+      <span>{{ messageForm.controls.name.value }}</span>
+      <strong>Phone:</strong>
+      <span>{{ messageForm.controls.phone.value }}</span>
+      <strong>E-mail:</strong>
+      <span>{{ messageForm.controls.email.value }}</span>
+      <strong>Message:</strong>
+      <span>{{ messageForm.controls.message.value }}</span>
+    </div>
+    <p>
+      Etiam tempus mi eu gravida tincidunt. Pellentesque convallis auctor quam, a congue magna iaculis et. Quisque congue porta
+      maximus. Praesent placerat vulputate iaculis. Curabitur eu elit eu dui congue hendrerit. Fusce sit amet egestas turpis.
+      Donec quis neque porttitor, feugiat ante at, maximus purus. Mauris fermentum nibh felis, at varius dui aliquet id.
+      Aenean at sapien ornare, viverra nulla vel, pretium metus. Praesent ullamcorper accumsan mauris in viverra. Nunc sagittis
+      turpis id sem pretium consequat. Sed sed ullamcorper sem. Sed pulvinar leo eget nisl consectetur, a sollicitudin elit
+      blandit. Sed euismod tortor sed eros vulputate, et condimentum lacus mollis. </p>
+
+  </div>
+</section>

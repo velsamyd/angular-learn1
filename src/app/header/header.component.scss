@@ -1,0 +1,27 @@
+.header {
+    padding: 24px 0;
+    background: #7700FF;
+    
+    a {color: #fff;}
+    .logo {font-weight: bold;}
+    nav { float: right; 
+
+        ul {
+            list-style-type: none;
+            margin: 0; 
+            padding: 0;
+
+            li { float: left;
+
+                a {
+                    padding: 27px 20px 26px;   
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: all .3s ease-in-out;                 
+
+                    &:hover {background: #490fd0;}
+                }
+            }
+        }
+    }
+}
